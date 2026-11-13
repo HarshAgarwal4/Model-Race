@@ -1,15 +1,21 @@
 import asyncio
 import time
 from sklearn.metrics import accuracy_score, f1_score, precision_score, recall_score
-
+import pandas as pd
 from models.llm import generate_response
 from predict import model_call
 
 # ------------------------------------------------------------------
 # Test Reviews & Labels (Populate with your 100 reviews and labels)
 # ------------------------------------------------------------------
-reviews: list[str] = []
-y_true: list[int] = []  # 1 for positive, 0 for negative
+
+df = pd.read_csv('data/test_reviews.csv')
+
+reviews: list[str] = df['review'].to_list()
+y_true: list[int] = df['sentiment'].astype(int).to_list()
+
+print(reviews , type(reviews))
+print(y_true , type(y_true))
 
 BATCH_SIZE = 10
 
