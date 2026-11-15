@@ -129,19 +129,3 @@ joblib.dump(
 
 print("\nModel saved successfully!")
 print("Model location:", MODEL_PATH)
-
-def evaluate(y_test , y_pred):
-    try:
-        accuracy = accuracy_score(y_test , y_pred)
-        precision = precision_score(y_test , y_pred)
-        recall = recall_score(y_test, y_pred)
-        f1 = f1_score(y_test , y_pred)
-
-        return {
-            accuracy_score : accuracy,
-            precision_score : precision,
-            recall_score : recall,
-            f1_score : f1
-        }
-    except Exception as e:  # noqa: BLE001
-        print(e)

@@ -4,7 +4,6 @@ from pydantic import BaseModel, Field
 
 
 class PredictionModel(BaseModel):
-    review: str
     sentiment: Literal["positive", "negative"]
 
 
