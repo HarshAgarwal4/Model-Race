@@ -1,0 +1,28 @@
+[project]
+name = "model-race"
+version = "0.1.0"
+description = "This is a model race project to determine when a small ML model is better than calling LLM"
+readme = "README.md"
+authors = [
+    { name = "HarshAgarwal4", email = "agarwalh485@gmail.com" }
+]
+requires-python = ">=3.12"
+dependencies = [
+    "dotenv>=0.9.9",
+    "joblib>=1.6.0",
+    "langchain-core>=1.8.0",
+    "langchain-groq>=1.1.3",
+    "langchain-mistralai>=1.1.6",
+    "langchain-ollama>=1.1.0",
+    "pandas>=3.1.1",
+    "pydantic>=2.14.3",
+    "python-dotenv>=1.2.4",
+    "scikit-learn>=1.9.1",
+]
+
+[project.scripts]
+model-race = "model_race:main"
+
+[build-system]
+requires = ["uv_build>=0.13.4,<0.14.0"]
+build-backend = "uv_build"
